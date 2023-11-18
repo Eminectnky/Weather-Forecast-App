@@ -19,6 +19,7 @@
 		FE3EE4E42B093E8F007B3D67 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EE4E32B093E8F007B3D67 /* HomeRouter.swift */; };
 		FE3EE4E82B093F40007B3D67 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EE4E72B093F40007B3D67 /* WeatherService.swift */; };
 		FE3EE4EA2B0946CC007B3D67 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EE4E92B0946CC007B3D67 /* WeatherModel.swift */; };
+		FE3EE4EE2B0966FB007B3D67 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EE4ED2B0966FB007B3D67 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		FE3EE4E32B093E8F007B3D67 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		FE3EE4E72B093F40007B3D67 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		FE3EE4E92B0946CC007B3D67 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		FE3EE4ED2B0966FB007B3D67 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		FE20E04F2B07D7ED00FE05FE /* WeatherForecastApp */ = {
 			isa = PBXGroup;
 			children = (
+				FE3EE4EC2B0966C7007B3D67 /* Detail */,
 				FE3EE4E52B093EF7007B3D67 /* Networking */,
 				FE3EE4DB2B093D69007B3D67 /* HomePage */,
 				FE20E0642B07D8FB00FE05FE /* SupportingFiles */,
@@ -123,6 +126,14 @@
 				FE3EE4E72B093F40007B3D67 /* WeatherService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		FE3EE4EC2B0966C7007B3D67 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				FE3EE4ED2B0966FB007B3D67 /* DetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +214,7 @@
 				FE3EE4EA2B0946CC007B3D67 /* WeatherModel.swift in Sources */,
 				FE20E0512B07D7ED00FE05FE /* AppDelegate.swift in Sources */,
 				FE3EE4E22B093E75007B3D67 /* HomeInteractor.swift in Sources */,
+				FE3EE4EE2B0966FB007B3D67 /* DetailViewController.swift in Sources */,
 				FE20E0532B07D7ED00FE05FE /* SceneDelegate.swift in Sources */,
 				FE3EE4DE2B093DB0007B3D67 /* HomePresenter.swift in Sources */,
 			);
