@@ -7,15 +7,49 @@
 
 import UIKit
 
-class ViewController: UIViewController {
 
+
+class HomeViewController: UIViewController {
+    
+    //MARK: - UI Elements
+    
+    
+    //MARK: - Properties
+    
+  
+    
+    var presenter: HomePresenterProtocol?
+
+    
+    
+    
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print("uygulama basladi")
+        presenter?.view = self
+        
+     
+        
     }
+    
+    //MARK: - Functions
+   
 
+    
+}
+
+//MARK: - HomeViewController
+extension HomeViewController: HomeViewProtocol {
+    func fetchWeatherData(_ path: String) {
+        presenter?.fetchWeatherData(path)
+    }
+    
+    
 
 }
+
+
 
 
 
