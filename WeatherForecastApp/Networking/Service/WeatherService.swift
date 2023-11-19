@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct AppURL {
+    static let baseUrl = "https://api.openweathermap.org/data/2.5/forecast?&lang=tr"
+}

@@ -8,9 +8,7 @@
 
 import Foundation
 
-
-
-// MARK: - Weather Model
+// MARK: - WeatherModel
 class WeatherModel: Codable {
     let cod: String?
     let message, cnt: Int?
@@ -160,24 +158,14 @@ enum Pod: String, Codable {
 class Weather: Codable {
     let id: Int?
     let main: MainEnum?
-    let description: Description?
-    let icon: String?
+    let description, icon: String?
 
-    init(id: Int?, main: MainEnum?, description: Description?, icon: String?) {
+    init(id: Int?, main: MainEnum?, description: String?, icon: String?) {
         self.id = id
         self.main = main
         self.description = description
         self.icon = icon
     }
-}
-
-enum Description: String, Codable {
-    case azBulutlu = "az bulutlu"
-    case açık = "açık"
-    case hafifYağmur = "hafif yağmur"
-    case kapalı = "kapalı"
-    case parçalıAzBulutlu = "parçalı az bulutlu"
-    case parçalıBulutlu = "parçalı bulutlu"
 }
 
 enum MainEnum: String, Codable {
@@ -198,4 +186,5 @@ class Wind: Codable {
         self.gust = gust
     }
 }
+
 

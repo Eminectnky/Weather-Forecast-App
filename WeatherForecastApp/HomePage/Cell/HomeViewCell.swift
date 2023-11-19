@@ -11,9 +11,7 @@ class HomeViewCell: UITableViewCell {
 
     
     @IBOutlet weak var dayLbl: UILabel!
-    
-    @IBOutlet weak var imageView1: UIImageView!
-    
+    @IBOutlet weak var imageView1: UIImageView!    
     @IBOutlet weak var dgLbl: UILabel!
     
     
@@ -25,7 +23,7 @@ class HomeViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        
     }
 
 }

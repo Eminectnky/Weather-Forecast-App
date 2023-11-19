@@ -12,13 +12,11 @@ protocol HomePresenterProtocol: AnyObject {
     var view: HomeViewProtocol? { get set }
     var interactor: HomeInteractorInputProtocol? { get set }
     
-    func fetchWeatherData(_ urlString: String)}
+    func fetchWeatherData(_ urlString: String)
 
-//View a veri gönderir
- enum PresenterOutput{
-    case didWeatherData(_ urlString: String)
     
 }
+
 
 //MARK: - Interactor
 
@@ -29,33 +27,28 @@ protocol HomeInteractorInputProtocol: AnyObject {
     
 }
 
-//presenter a veri gönderir
+//presenter a veri gonderir
 protocol HomeInteractorDelegate: AnyObject {
-    func handleOutput(_ output: HomeInteractorOutput)
+    func didReceiveWeatherData(_ weatherModel: WeatherModel)
 }
 
 
-enum HomeInteractorOutput {
-    case didWeatherData(_ urlString: String)
-    
-}
-
-//MARK: - ViewController
+//MARK: - HomeViewController
 protocol HomeViewProtocol: AnyObject {
+    
+    func fetchWeatherData(_ path: String)
+    func didReceiveWeatherData(_ weatherModel: WeatherModel)
 
-    func fetchWeatherData(_ urlString: String)
     
 }
 
 //MARK: - Router
 enum Routes {
     case detail
-    
 }
 
 protocol HomeRouterProtocol: AnyObject {
     static func createModule() -> UIViewController
     func navigate(_ route: Routes)
 }
-
 

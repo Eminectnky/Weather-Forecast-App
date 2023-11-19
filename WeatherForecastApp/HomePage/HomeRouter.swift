@@ -26,7 +26,10 @@ class HomeRouter {
     }
 }
 
+
+//MARK: HomeRouterProtocol
 extension HomeRouter: HomeRouterProtocol {
+//    TODO: Detay ekranı hazırlandığında bağlanacak
     func navigate(_ route: Routes) {
         switch route{
         case .detail:
