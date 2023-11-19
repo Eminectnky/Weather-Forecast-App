@@ -13,6 +13,17 @@ class HomeViewController: UIViewController {
     
     //MARK: - UI Elements
     
+    @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var statusLbl: UILabel!
+    @IBOutlet weak var dateLbl: UILabel!
+    @IBOutlet weak var degreeLbl: UILabel!
+    @IBOutlet weak var unitLbl: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
+
+    
+    
     
     //MARK: - Properties
     

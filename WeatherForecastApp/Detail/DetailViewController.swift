@@ -8,22 +8,46 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    //MARK: - UI Elements
+    
+    
+    //MARK: - Properties
+    
+  
+    
+    var presenter: DetailPresenterProtocol?
 
+    
+    
+    
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print("uygulama basladi")
+        presenter?.view = self
+        
+     
+        
     }
     
+    //MARK: - Functions
+   
 
-    /*
-    // MARK: - Navigation
+    
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//MARK: - DetailViewController
+extension DetailViewController: DetailViewProtocol {
+    
+//    func fetchWeatherData(_ path: String) {
+//        presenter?.fetchWeatherData(path)
+//    }
+    
+    
 
 }
+
+
+
+
+

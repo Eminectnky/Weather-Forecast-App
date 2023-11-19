@@ -1,19 +1,19 @@
 //
-//  HomeRouter.swift
+//  DetailRouter.swift
 //  WeatherForecastApp
 //
-//  Created by Emine CETINKAYA on 18.11.2023.
+//  Created by Emine CETINKAYA on 19.11.2023.
 //
 
 import UIKit
 
-class HomeRouter {
+class DetailRouter {
 //    AppDelegate sınıfında burası uygulamanın başlangıcı olarak belirtildi(katman geçişlerini proje bilsin diye)
     static func createModule() -> UIViewController {
-        let view = HomeViewController()
-        let interactor = HomeInteractor()
-        let presenter = HomePresenter()
-        let router = HomeRouter()
+        let view = DetailViewController()
+        let interactor = DetailInteractor()
+        let presenter = DetailPresenter()
+        let router = DetailRouter()
         
         
         
@@ -26,13 +26,8 @@ class HomeRouter {
     }
 }
 
-extension HomeRouter: HomeRouterProtocol {
-    func navigate(_ route: Routes) {
-        switch route{
-        case .detail:
-            let vc = DetailRouter.createModule()
-            
-        }
+extension DetailRouter: DetailRouterProtocol {
+    func navigate(_ route: DetailRoutes) {
         
     }
 

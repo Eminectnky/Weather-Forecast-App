@@ -15,7 +15,7 @@ protocol HomePresenterProtocol: AnyObject {
     func fetchWeatherData(_ urlString: String)}
 
 //View a veri gönderir
-enum PresenterOutput{
+ enum PresenterOutput{
     case didWeatherData(_ urlString: String)
     
 }

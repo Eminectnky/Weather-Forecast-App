@@ -20,6 +20,12 @@
 		FE3EE4E82B093F40007B3D67 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EE4E72B093F40007B3D67 /* WeatherService.swift */; };
 		FE3EE4EA2B0946CC007B3D67 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EE4E92B0946CC007B3D67 /* WeatherModel.swift */; };
 		FE3EE4EE2B0966FB007B3D67 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3EE4ED2B0966FB007B3D67 /* DetailViewController.swift */; };
+		FE55F1CF2B0A3128000230F7 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55F1CE2B0A3128000230F7 /* DetailPresenter.swift */; };
+		FE55F1D12B0A313D000230F7 /* DetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55F1D02B0A313D000230F7 /* DetailContracts.swift */; };
+		FE55F1D32B0A314F000230F7 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55F1D22B0A314F000230F7 /* DetailInteractor.swift */; };
+		FE55F1D52B0A316E000230F7 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55F1D42B0A316E000230F7 /* DetailRouter.swift */; };
+		FE55F1D82B0A428D000230F7 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55F1D72B0A428D000230F7 /* HomeViewCell.swift */; };
+		FE55F1DA2B0A45FA000230F7 /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55F1D92B0A45FA000230F7 /* DetailViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +44,12 @@
 		FE3EE4E72B093F40007B3D67 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		FE3EE4E92B0946CC007B3D67 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		FE3EE4ED2B0966FB007B3D67 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FE55F1CE2B0A3128000230F7 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		FE55F1D02B0A313D000230F7 /* DetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContracts.swift; sourceTree = "<group>"; };
+		FE55F1D22B0A314F000230F7 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		FE55F1D42B0A316E000230F7 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		FE55F1D72B0A428D000230F7 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		FE55F1D92B0A45FA000230F7 /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +106,7 @@
 		FE3EE4DB2B093D69007B3D67 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				FE55F1D62B0A4255000230F7 /* Cell */,
 				FE3EE4DC2B093D8A007B3D67 /* Entity */,
 				FE3EE4DD2B093DB0007B3D67 /* HomePresenter.swift */,
 				FE20E0542B07D7ED00FE05FE /* HomeViewController.swift */,
@@ -132,8 +145,21 @@
 			isa = PBXGroup;
 			children = (
 				FE3EE4ED2B0966FB007B3D67 /* DetailViewController.swift */,
+				FE55F1CE2B0A3128000230F7 /* DetailPresenter.swift */,
+				FE55F1D02B0A313D000230F7 /* DetailContracts.swift */,
+				FE55F1D22B0A314F000230F7 /* DetailInteractor.swift */,
+				FE55F1D42B0A316E000230F7 /* DetailRouter.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		FE55F1D62B0A4255000230F7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FE55F1D72B0A428D000230F7 /* HomeViewCell.swift */,
+				FE55F1D92B0A45FA000230F7 /* DetailViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,12 +235,18 @@
 			files = (
 				FE3EE4E82B093F40007B3D67 /* WeatherService.swift in Sources */,
 				FE3EE4E02B093E49007B3D67 /* HomeContracts.swift in Sources */,
+				FE55F1D82B0A428D000230F7 /* HomeViewCell.swift in Sources */,
 				FE20E0552B07D7ED00FE05FE /* HomeViewController.swift in Sources */,
 				FE3EE4E42B093E8F007B3D67 /* HomeRouter.swift in Sources */,
+				FE55F1CF2B0A3128000230F7 /* DetailPresenter.swift in Sources */,
+				FE55F1D52B0A316E000230F7 /* DetailRouter.swift in Sources */,
 				FE3EE4EA2B0946CC007B3D67 /* WeatherModel.swift in Sources */,
 				FE20E0512B07D7ED00FE05FE /* AppDelegate.swift in Sources */,
 				FE3EE4E22B093E75007B3D67 /* HomeInteractor.swift in Sources */,
+				FE55F1D32B0A314F000230F7 /* DetailInteractor.swift in Sources */,
+				FE55F1D12B0A313D000230F7 /* DetailContracts.swift in Sources */,
 				FE3EE4EE2B0966FB007B3D67 /* DetailViewController.swift in Sources */,
+				FE55F1DA2B0A45FA000230F7 /* DetailViewCell.swift in Sources */,
 				FE20E0532B07D7ED00FE05FE /* SceneDelegate.swift in Sources */,
 				FE3EE4DE2B093DB0007B3D67 /* HomePresenter.swift in Sources */,
 			);
