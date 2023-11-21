@@ -12,6 +12,9 @@ import CoreLocation
 
 class HomeViewController: UIViewController {
     
+    
+    
+    
     //MARK: - UI Elements
     
     @IBOutlet weak var cardView: UIView!
@@ -20,46 +23,72 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var degreeLbl: UILabel!
     @IBOutlet weak var unitLbl: UILabel!
-    @IBOutlet weak var tableView: UITableView!
     
+//    @IBOutlet weak var tableView: UITableView!
+    
+    
+    @IBOutlet weak var day1: UILabel!
+    @IBOutlet weak var temp1: UILabel!
+        
+    @IBOutlet weak var day2: UILabel!
+    @IBOutlet weak var temp2: UILabel!
+    
+    @IBOutlet weak var day3: UILabel!
+    @IBOutlet weak var temp3: UILabel!
+    
+    @IBOutlet weak var day4: UILabel!
+    @IBOutlet weak var temp4: UILabel!
+    
+    @IBOutlet weak var day5: UILabel!
+    @IBOutlet weak var temp5: UILabel!
     
     
     //MARK: - Properties
     
     let locationManager = CLLocationManager()
-    
     var presenter: HomePresenterProtocol?
     let apiKey = AppConfig.openWeatherMapApiKey
-    var days = [String]()
+//    var days = [List]()
     let dateFormatter = DateFormatter()
-    
-    
-    
+    var days = [String]()
+    var temps = [String]()
+  
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        let path = "lat=44.34&lon=10.99&appid=\(apiKey)&units=metric"
+        fetchWeatherData(path)
         print("uygulama basladi")
         presenter?.view = self
-        requestLocationPermission()
-        getCurrentLocation()
+        setupUI()
         
     }
     
+    
+    func setupUI(){
+        
+        requestLocationPermission()
+        getCurrentLocation()
+//        serviceControl()
+//        tableView.delegate = self
+//        tableView.dataSource = self
+    }
+    
     //MARK: - Functions
-    // Kullanıcıdan konum iznini istedigimiz fonksiyon
+    // Kullanıcıdan konum iznini istediğimiz fonksiyon
     func requestLocationPermission() {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
     }
     
-    // Konumu aliyoruz
+    // Konumu alıyoruz
     func getCurrentLocation() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
     }
     
-    // Bugunun tarihinden başlayarak 7 gün boyunca verileri almak için kullanılabilecek bir fonksiyon
+    // Bugünün tarihinden başlayarak 7 gün boyunca verileri almak için kullanacağım fonksiyon
     func getWeatherForNext7Days(from startDate: Date, in weatherModel: WeatherModel) -> [List] {
         guard let allWeatherData = weatherModel.list else {
             return []
@@ -82,32 +111,32 @@ class HomeViewController: UIViewController {
             }
             print(filteredData)
             
-            // Eğer filtreleme sonucunda veri bulunduysa, ekleyerek devam ediyoruz
+            // Eğer filtreleme sonucunda veri bulunduysa, ekleyerek devam ediliyor
             if let firstDataForDay = filteredData.first {
                 selectedWeatherData.append(firstDataForDay)
             }
             
-            // Bir sonraki güne geçiyoruz
+            // Bir sonraki güne geçiliyor
             currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate) ?? currentDate
         }
         
         return selectedWeatherData
     }
     
+//   Servise istek atıldı
+//    func serviceControl(){
     
-    //    func serviceControl(){
-    
-    //                let apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=London&appid=\(apiKey)"
-    //                AF.request(apiUrl).responseJSON { response in
-    //                    switch response.result {
-    //                    case .success(let value):
-    //                        print("JSON: \(value)")
-    //
-    //                    case .failure(let error):
-    //                        print("Error: \(error)")
-    //                    }
-    //                }
-    //    }
+//                let apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=London&appid=\(apiKey)"
+//                AF.request(apiUrl).responseJSON { response in
+//                    switch response.result {
+//                    case .success(let value):
+//                        print("JSON: \(value)")
+//
+//                    case .failure(let error):
+//                        print("Error: \(error)")
+//                    }
+//                }
+//    }
     
     
 //    fahrenheit a çevirmek için
@@ -119,21 +148,32 @@ class HomeViewController: UIViewController {
 
 //MARK: - HomeViewProtocol
 extension HomeViewController: HomeViewProtocol {
+    
+    
     func didReceiveWeatherData(_ weatherModel: WeatherModel) {
         let startDate = Date()
 
         let selectedWeatherDataForNext7Days = getWeatherForNext7Days(from: startDate, in: weatherModel)
         
-      let day1 = selectedWeatherDataForNext7Days[0]
-        print(day1)
-        
+    
+//        self.days = selectedWeatherDataForNext7Days
+        print("Günler dizisindeki eleman sayısı:\(selectedWeatherDataForNext7Days.count)")
+  
+//        setupUI()
         // Seçilen verileri yazdırıyoruz
         selectedWeatherDataForNext7Days.forEach { data in
+            
             print("Tarih: \(data.dtTxt ?? ""), Sicaklik: \(data.main?.temp ?? 0.0)")
+            
+            days.append("\(data.dtTxt ?? "")")
+            temps.append("\(data.main?.temp ?? 0.0)")
+            
         }
-        
-    
+   
+   
     }
+    
+    
     
     func fetchWeatherData(_ path: String) {
         presenter?.fetchWeatherData(path)
@@ -161,6 +201,18 @@ extension HomeViewController: CLLocationManagerDelegate {
     }
 }
 
-
+//extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        days.count
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: “cell”, for: indexPath) as!     HomeViewCell
+//        cell.textLabel?.text = days[indexPath.row].dtTxt
+//        return cell
+//    }
+//    
+    
+//}
 
 

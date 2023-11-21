@@ -22,7 +22,6 @@ extension DetailPresenter: DetailInteractorDelegate {
     
     func fetchWeatherData(_ path: String) {
         print("Presenter")
-//        interactor?.fetchWeatherData(path)
     }
 }
 

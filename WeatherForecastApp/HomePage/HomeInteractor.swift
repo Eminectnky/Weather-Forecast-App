@@ -16,17 +16,11 @@ class HomeInteractor {
 
 //Interactor protocol
 extension HomeInteractor: HomeInteractorInputProtocol{
-
-    
-    
+ 
     func fetchWeatherData(_ path: String) {
 //        let apiUrl = "\(baseURL)\(path)"
          let apiUrl = "\(baseURL)&lat=44.34&lon=10.99&appid=\(apiKey)&units=metric"
 
-        
-
-        
-        
          AF.request(apiUrl, method: .get).responseData { response in
              switch response.result {
              case .success(let data):

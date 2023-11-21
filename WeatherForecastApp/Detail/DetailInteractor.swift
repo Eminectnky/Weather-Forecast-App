@@ -17,12 +17,7 @@ class DetailInteractor {
 extension DetailInteractor: DetailInteractorInputProtocol{
     func fetchWeatherData(_ urlString: String) {
 //        istek atılacak
-    }
-    
-    
-   
-   
-    
+    }   
     
 }
 

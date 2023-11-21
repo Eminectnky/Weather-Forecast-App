@@ -12,16 +12,12 @@ import UIKit
 protocol DetailPresenterProtocol: AnyObject {
     var view: DetailViewProtocol? { get set }
     var interactor: DetailInteractorInputProtocol? { get set }
-    
-    
-//    func fetchWeatherData(_ urlString: String)
+
 }
 
 
 //View a veri gönderir
  enum DetailPresenterOutput{
-//    case didWeatherData(_ urlString: String)
-    
 }
 
 //MARK: - Interactor
@@ -29,8 +25,6 @@ protocol DetailPresenterProtocol: AnyObject {
 //presenter dan tetiklenir
 protocol DetailInteractorInputProtocol: AnyObject {
     var delegate: DetailInteractorDelegate? { get set }
-//    func fetchWeatherData(_ urlString: String)
-    
 }
 
 //presenter a veri gönderir
@@ -40,15 +34,12 @@ protocol DetailInteractorDelegate: AnyObject {
 
 
 enum DetailInteractorOutput {
-//    case didWeatherData(_ urlString: String)
     
 }
 
 //MARK: - ViewController
 protocol DetailViewProtocol: AnyObject {
 
-//    func fetchWeatherData(_ urlString: String)
-    
 }
 
 //MARK: - Router
